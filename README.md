@@ -65,3 +65,25 @@
 - Resource limits
 ## 🔄 CI/CD
 Helm charts provide a consistent deployment mechanism across development and production environments.
+## 📊 Observability
+
+The platform is designed with monitoring and observability as first-class components.
+
+### Metrics
+
+- Prometheus
+- Kubernetes metrics
+- Node metrics
+- Application metrics
+
+### Visualization
+
+- Grafana dashboards
+
+### Alerting
+
+Example alerts include:
+
+- High CPU utilization
+- Application pod unavailability
+- Application health issues
