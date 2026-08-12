@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  tag: latest
+
+environment:
+  ENVIRONMENT: development
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 3
