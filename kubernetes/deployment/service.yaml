@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloudops-demo
+  namespace: ai-cloud-labs
+  labels:
+    app: cloudops-demo
+spec:
+  type: ClusterIP
+
+  selector:
+    app: cloudops-demo
+
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
