@@ -42,6 +42,9 @@
 - Horizontal Pod Autoscaling
 - CPU and memory based scaling
 - Resource requests and limits
+- Helm-based deployments
+- Environment-specific Helm values
+- Reusable Kubernetes templates
 ## ⛑️ Reliability
 - Minimum two application replicas
 - Horizontal Pod Autoscaling
@@ -60,3 +63,5 @@
 - Read-only container filesystem
 - Kubernetes Secret configuration
 - Resource limits
+## 🔄 CI/CD
+Helm charts provide a consistent deployment mechanism across development and production environments.
