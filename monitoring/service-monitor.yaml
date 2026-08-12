@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cloudops-demo
+  namespace: ai-cloud-labs
+  labels:
+    app: cloudops-demo
+spec:
+  selector:
+    matchLabels:
+      app: cloudops-demo
+
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
