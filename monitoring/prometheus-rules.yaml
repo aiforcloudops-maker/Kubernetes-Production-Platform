@@ -1,0 +1,45 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: cloudops-demo-alerts
+  namespace: ai-cloud-labs
+  labels:
+    app: cloudops-demo
+
+spec:
+  groups:
+    - name: cloudops-demo.rules
+
+      rules:
+
+        - alert: CloudOpsDemoHighCPU
+          expr: |
+            sum(
+              rate(container_cpu_usage_seconds_total{
+                namespace="ai-cloud-labs",
+                container="cloudops-demo"
+              }[5m])
+            ) > 1
+          for: 5m
+
+          labels:
+            severity: warning
+
+          annotations:
+            summary: "CloudOps demo application CPU usage is high"
+            description: "The CloudOps demo application has sustained high CPU usage."
+
+        - alert: CloudOpsDemoPodUnavailable
+          expr: |
+            kube_deployment_status_replicas_available{
+              namespace="ai-cloud-labs",
+              deployment="cloudops-demo"
+            } < 1
+          for: 5m
+
+          labels:
+            severity: critical
+
+          annotations:
+            summary: "CloudOps demo application unavailable"
+            description: "No application replicas are currently available."
