@@ -39,3 +39,13 @@
 - RBAC
 - ServiceAccounts
 - NetworkPolicies
+- Horizontal Pod Autoscaling
+- CPU and memory based scaling
+- Resource requests and limits
+## ⛑️ Reliability
+- Minimum two application replicas
+- Horizontal Pod Autoscaling
+- CPU and memory based scaling
+- Controlled scale-down behavior
+- Rolling updates
+- Zero planned downtime during deployments
