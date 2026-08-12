@@ -1,0 +1,24 @@
+replicas: 1
+
+admin:
+  existingSecret: ""
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+service:
+  type: ClusterIP
+
+persistence:
+  enabled: false
+
+grafana.ini:
+  server:
+    root_url: http://grafana.local
+  users:
+    allow_sign_up: false
