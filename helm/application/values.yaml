@@ -1,0 +1,52 @@
+replicaCount: 2
+
+image:
+  repository: ai-cloud-labs/cloudops-demo
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: true
+  className: nginx
+  host: cloudops.local
+  path: /
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  cpuUtilization: 70
+  memoryUtilization: 80
+
+securityContext:
+  runAsNonRoot: true
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+
+networkPolicy:
+  enabled: true
+
+environment:
+  ENVIRONMENT: development
+  LOG_LEVEL: INFO
+  APP_NAME: "AI Cloud Labs Kubernetes Platform"
