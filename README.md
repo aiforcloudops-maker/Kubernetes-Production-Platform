@@ -49,3 +49,14 @@
 - Controlled scale-down behavior
 - Rolling updates
 - Zero planned downtime during deployments
+### Kubernetes Security Controls
+
+- Dedicated ServiceAccount
+- RBAC with least-privilege permissions
+- NetworkPolicy
+- Non-root containers
+- Disabled privilege escalation
+- Dropped Linux capabilities
+- Read-only container filesystem
+- Kubernetes Secret configuration
+- Resource limits
