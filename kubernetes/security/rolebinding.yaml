@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cloudops-demo
+  namespace: ai-cloud-labs
+subjects:
+  - kind: ServiceAccount
+    name: cloudops-demo
+    namespace: ai-cloud-labs
+roleRef:
+  kind: Role
+  name: cloudops-demo
+  apiGroup: rbac.authorization.k8s.io
