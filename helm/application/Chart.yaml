@@ -1,0 +1,14 @@
+apiVersion: v2
+
+name: cloudops-application
+
+description: Production-style Kubernetes application Helm chart for AI Cloud Labs
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.0.0"
+
+maintainers:
+  - name: AI Cloud Labs
